@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Cleanup') {
+        stage('Get Hostname via PowerShell') {
             steps {
-                bat 'powershell.exe -ExecutionPolicy Bypass -File cleanup-script.ps1 -TargetDir "C:\\Temp" -FileType "*.txt"'
+                bat 'powershell -Command "$env:COMPUTERNAME"'
             }
         }
     }
