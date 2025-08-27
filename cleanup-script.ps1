@@ -1,11 +1,11 @@
 param (
     [string]$TargetDir = "C:\Temp",
-    [int]$DaysOld = 7,
+    #[int]$DaysOld = 7,
     [string]$FileType = "*.txt",
     [switch]$DryRun
 )
 
-$cutoff = (Get-Date).AddDays(-$DaysOld)
+#$cutoff = (Get-Date).AddDays(-$DaysOld)
 $files = Get-ChildItem -Path $TargetDir -Filter $FileType | Where-Object { $_.LastWriteTime -lt $cutoff }
 
 foreach ($file in $files) {
