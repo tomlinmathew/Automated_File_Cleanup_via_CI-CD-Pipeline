@@ -1,7 +1,7 @@
 param (
     [string]$TargetDir = "C:\Temp",
     [int]$DaysOld = 7,
-    [string]$FileType = "*.log",
+    [string]$FileType = "*.txt",
     [switch]$DryRun
 )
 
